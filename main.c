@@ -1,22 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-int main(void){
-	int i=0;
-	char str[4];
-	str[0]='a';
-	str[1]='b';
-	str[2]='c';
-	str[3]='\0';
+void main(void){
+	char src[]  = "The worst things to eat before you sleep";
+	char dst[100];
 	
-	printf("%s\n",str);
+	*dst = strcpy(dst, src);
 	
-	while(str[i]!=0){
-		printf("%c\n",str[i]);
-		i++;
-	}
+	printf("copied string: %s",dst);	
 }
-
-
 
 
