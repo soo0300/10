@@ -2,23 +2,20 @@
 #include <string.h>
 
 void main(void){
-	FILE* fp;
-	int i;
-	char str[100];
-
-	for(i=0; i<3; i++){
+	FILE* fp=NULL;
+	char c;
 	
-	//fopnen
-	fp=fopen("sample.txt","w");
+	fp = fopen("sample.txt","r");
 	
-	//scanf
-	scanf("input a word: %s ",str);
-
-	//fprintf
-	fprintf(fp,"%s",str);
+	if(fp==NULL){
+		printf("파일을 못 열음\n");
+	}
 	
-	printf("\n");
+	c = fgetc(fp);
 	
+	
+	while((c==fgetc(fp)) !=EOF){
+		putchar(c);
 	}
 	
 	fclose(fp);
